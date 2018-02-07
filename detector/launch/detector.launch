@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<launch>
+    
+    
+	
+	<node name="DetectorNode" pkg="detector" type="detector_node"  output="screen" >
+
+		<param name="IMAGE_WIDTH" value= "1812" />
+		<param name="min_ID" value="0"/>
+		<param name="max_ID" value="20"/>
+		<param name="min_sector" value="1"/>
+		<param name="max_sector" value="5"/>
+		<param name="min_map" value="10"/>
+		<param name="max_map" value="10"/>
+		<param name="simulation" value="0"/>
+
+	</node>
+	
+        
+</launch>
