@@ -497,7 +497,7 @@ AmclNode::AmclNode() :
 
   set_map_srv_= nh_.advertiseService("set_map", &AmclNode::setMapCallback, this);
 
- laser_scan_sub_ = new message_filters::Subscriber<sensor_msgs::LaserScan>(nh_, scan_topic_, 100);
+ /*laser_scan_sub_ = new message_filters::Subscriber<sensor_msgs::LaserScan>(nh_, scan_topic_, 100);
  laser_scan_filter_ =
        new tf::MessageFilter<sensor_msgs::LaserScan>(*laser_scan_sub_,
                                                        *tf_,
@@ -505,7 +505,7 @@ AmclNode::AmclNode() :
                                                        100);
 
  laser_scan_filter_->registerCallback(boost::bind(&AmclNode::laserReceived,
- this, _1));
+ this, _1));*/
 
   if(use_map_topic_) {
     map_sub_ = nh_.subscribe("map", 1, &AmclNode::mapReceived, this);
@@ -1929,9 +1929,15 @@ void AmclNode::detectionCallback (const detector::messagedet::ConstPtr &msg){
         marker.MarkerPoints(corners);
         observation.push_back(marker);
     }
+    for(int i=0; i< observation.size();i++){
+        cout<<observation[i].getMarkerID()<<endl;
+        cout<<observation[i].getSectorID()<<endl;
+        cout<<observation[i].getMapID()<<endl;
 
+    }
+    cout<<observation.size()<<endl;
     //Update only if Doris has detected markers.
-    if(msg->DetectedMarkers.size()>0){
+    //if(msg->DetectedMarkers.size()>0){
 
        //Create an object to handle marker detection the first time.
     if(frame_to_camera_!=msg->header.frame_id){
@@ -2246,7 +2252,7 @@ void AmclNode::detectionCallback (const detector::messagedet::ConstPtr &msg){
   }
   path_pub_r.publish(reference);
   path_pub_out.publish(output);
-}
+//}
 
 }
 

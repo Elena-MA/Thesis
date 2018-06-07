@@ -89,6 +89,7 @@ bool AMCLMarker::UpdateSensor(pf_t *pf, AMCLSensorData *data)
 {
   // Apply the camera sensor model
  if(this->model_type == MARKER_MODEL_LIKELIHOOD)
+     cout<<"llego"<<endl;
     pf_update_sensor(pf, (pf_sensor_model_fn_t) ObservationLikelihood, data);
   return true;
 }
@@ -123,10 +124,13 @@ double AMCLMarker::ObservationLikelihood(AMCLMarkerData *data, pf_sample_set_t* 
 
             if(self->map[j].getMarkerID()==observation[k].getMarkerID() && self->map[j].getSectorID()==observation[k].getSectorID() && self->map[j].getMapID()==observation[k].getMapID()){
                 detected_from_map.push_back(self->map[j]);
+                cout<<observation[k].getMarkerID()<<endl;
             }
 
         }
   }
+  cout<<"llego"<<endl;
+  cout<<detected_from_map.size()<<endl;
   for (i=0;i< set->sample_count; i++){
       sample=set-> samples + i;
       pose = sample->pose;
@@ -164,6 +168,7 @@ double AMCLMarker::ObservationLikelihood(AMCLMarkerData *data, pf_sample_set_t* 
                 projection=self->projectPoints(relative_to_cam);
            }
            if(self->simulation == 0){
+               cout<<"aqui1"<<endl;
                std::vector<cv::Point3f>rel;
                for (int k=0; k< relative_to_cam.size(); k++){
                     cv::Point3d Coord;
