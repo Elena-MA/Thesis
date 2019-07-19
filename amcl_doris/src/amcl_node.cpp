@@ -497,7 +497,7 @@ AmclNode::AmclNode() :
 
   set_map_srv_= nh_.advertiseService("set_map", &AmclNode::setMapCallback, this);
 
- /*laser_scan_sub_ = new message_filters::Subscriber<sensor_msgs::LaserScan>(nh_, scan_topic_, 100);
+ laser_scan_sub_ = new message_filters::Subscriber<sensor_msgs::LaserScan>(nh_, scan_topic_, 100);
  laser_scan_filter_ =
        new tf::MessageFilter<sensor_msgs::LaserScan>(*laser_scan_sub_,
                                                        *tf_,
@@ -505,7 +505,7 @@ AmclNode::AmclNode() :
                                                        100);
 
  laser_scan_filter_->registerCallback(boost::bind(&AmclNode::laserReceived,
- this, _1));*/
+ this, _1));
 
   if(use_map_topic_) {
     map_sub_ = nh_.subscribe("map", 1, &AmclNode::mapReceived, this);

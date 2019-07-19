@@ -11,8 +11,8 @@
 		<param name="min_sector" value="1"/>
 		<param name="max_sector" value="5"/>
 		<param name="min_map" value="10"/>
-		<param name="max_map" value="10"/>
-		<param name="simulation" value="0"/>
+		<param name="max_map" value="11"/>
+		<param name="simulation" value="1"/>
 
 	</node>
 	

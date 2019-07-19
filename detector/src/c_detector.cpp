@@ -639,7 +639,7 @@ std::vector<Marcador> cDetector::orderDetection(std::vector<Marcador> detection)
     Marcador temp;
     for (int i=0; i<detection.size();i++){
 
-        if(detection[i].getMarkerID()<min_ID || detection[i].getMarkerID()>max_ID || detection[i].getSectorID()<min_sector || detection[i].getSectorID()>max_sector || detection[i].getMapID()!=min_map){
+        if(detection[i].getMarkerID()<min_ID || detection[i].getMarkerID()>max_ID || detection[i].getSectorID()<min_sector || detection[i].getSectorID()>max_sector || detection[i].getMapID()<min_map || detection[i].getMapID()>max_map){
             detection.erase(detection.begin()+i);
             i=i-1;
 

@@ -28,7 +28,7 @@
 		<visual>
 			<origin xyz="0 0 0" rpy="0 0 0"/>
 			<geometry>
-				<mesh filename="file:///home/patri/catkin_ws/src/simulation/meshes/hokuyo.dae"/>
+				<mesh filename="file:///yourpath/catkin_ws/src/simulation/meshes/hokuyo.dae"/>
 			</geometry>
 		</visual>
 	</link>
