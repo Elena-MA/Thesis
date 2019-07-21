@@ -4,14 +4,14 @@ Author: Patricia Javierre
 This repository contains different ROS packages building localization algorithm for a mobile robot based on the MCL algorithm, as well as the files
 needed to simulate the robot for test purposes.
 
-#SIMULATION: model of Doris and environmnets.
-  -world -> environmnets
+#SIMULATION: model of Doris and environments.
+  -world -> environments
   -xacro->  robot model
   -launch -> launch files for gazebo and robot state publisher.
 
 #CONNECTON : interface between Doris and ROS.
 
-#DETECTOR : detection of the spedific landmarks.
+#DETECTOR : detection of the specific landmarks.
   -launch-> files for running the node. 
       - Flag simulation : 0 -> using the omnidirectional image.
                           1 -> combining information of three cameras.
